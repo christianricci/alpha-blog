@@ -1,5 +1,4 @@
 # articles_controller.rb
-
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
 
@@ -17,7 +16,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Article was successfully created"
+      flash[:notice] = 'Article was successfully created'
       redirect_to article_path(@article)
     else
         render 'new'
@@ -25,8 +24,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-        if @article.update (article_params)
-          flash[:notice] = "Article was successfully updated"
+        if @article.update article_params
+          flash[:notice] = 'Article was successfully updated'
           redirect_to article_path(@article)
         else
           render 'edit'
@@ -38,7 +37,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = "Article was successfuly deleted."
+    flash[:notice] = 'Article was successfuly deleted.'
     redirect_to articles_path
   end
 
