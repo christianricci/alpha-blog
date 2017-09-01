@@ -1,7 +1,7 @@
-# pages_controller.rb 
+# pages_controller.rb
 class PagesController < ApplicationController
   def home
-    nil
+    redirect_to articles_path if logged_in?
   end
 
   def about
